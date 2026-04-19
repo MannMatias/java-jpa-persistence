@@ -1,62 +1,40 @@
-# TP3_DesarrolloSoftware
-Este proyecto es una implementación de JPA (Java Persistence API) utilizando la base de datos H2. A continuación, se detallan los pasos para descargar, configurar, y ejecutar el proyecto.
+# 🗄️ Persistencia con JPA & H2
 
-# Prerrequisitos
+Aplicación Java que implementa persistencia de datos usando **JPA (Java Persistence API)** con base de datos embebida H2. Demuestra el mapeo objeto-relacional (ORM), creación de entidades y operaciones básicas sobre la base de datos.
 
-Antes de comenzar, asegúrate de tener instalado lo siguiente en tu sistema:
+## 🛠️ Tecnologías
 
-IntelliJ IDEA
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![Gradle](https://img.shields.io/badge/Gradle-02303A?style=for-the-badge&logo=gradle&logoColor=white)
 
-H2 Database
+**Dependencias:** JPA (Hibernate), H2 Database, Gradle
 
-# Instalación
+## 📋 Funcionalidades
 
-Descargar el repositorio:
+- Mapeo de entidades Java a tablas relacionales con anotaciones JPA
+- Configuración de `persistence.xml` para la conexión con H2
+- Creación y consulta de registros en base de datos embebida
+- Verificación de datos desde la consola H2
 
-Haz clic en el botón Code en la página principal del repositorio.
+## 🚀 Cómo ejecutar
 
-Selecciona Download ZIP y guarda el archivo ZIP en tu computadora.
+**Requisitos:** IntelliJ IDEA, H2 Database instalado
 
-Extrae el contenido del archivo ZIP en una ubicación de tu preferencia.
+1. Clonar el repositorio:
+   ```bash
+   git clone https://github.com/MannMatias/java-jpa-persistence
+   ```
+2. Abrir en IntelliJ IDEA: `File > Open` → seleccionar la carpeta del proyecto
+3. Iniciar el servidor H2 (`h2.bat` o `h2.sh`)
+4. Conectarse a la consola H2 con:
+   - **JDBC URL:** `jdbc:h2:tcp://localhost/~/test`
+   - **User:** `sa` | **Password:** *(vacío)*
+5. Ejecutar `Main.java` con click derecho → `Run 'Main.main()'`
+6. Verificar los datos creados en la consola H2:
+   ```sql
+   SELECT * FROM ARTICULO;
+   ```
 
-# Abrir el proyecto en IntelliJ IDEA:
+## 📚 Contexto
 
-Abre IntelliJ IDEA.
-Selecciona File > Open... y navega hasta la carpeta donde extrajiste el contenido del ZIP.
-
-Selecciona la carpeta raíz del proyecto y haz clic en OK para abrirlo.
-
-# Configuración de la base de datos H2
-
-Iniciar la base de datos H2:
-Asegúrate de que el servidor H2 esté en funcionamiento.
-
-Abre la consola de H2 (h2.bat o h2.sh dependiendo de tu sistema operativo).
-
-Conectarse a la base de datos:
-
-En la consola de H2, selecciona Generic H2 (Embedded).
-
-En el campo JDBC URL, ingresa la siguiente URL:
-
-Copiar código:
-jdbc:h2:tcp://localhost/~/test
-
-Completa los campos User Name con sa y Password (déjalo vacío) y haz clic en Connect.
-
-# Ejecución del Proyecto
-
-Ejecutar el proyecto:
-
-En IntelliJ IDEA, navega hasta la clase Main ubicada en src/main/java/org/example/Main.java.
-
-Haz clic derecho sobre el archivo Main.java y selecciona Run 'Main.main()'.
-Verificación de los objetos creados:
-
-Después de ejecutar el proyecto, vuelve a la consola de H2.
-
-Ejecuta una consulta para verificar que las tablas y los datos correspondientes han sido creados correctamente:
-sql
-
-Copiar código:
-SELECT * FROM ARTICULO ;
+Proyecto desarrollado para la materia **Desarrollo de Software** — UTN FRM.
